@@ -1,21 +1,26 @@
-// Fireworks explosion effect
-document.addEventListener('DOMContentLoaded', () => {
-    const fireworks = document.querySelector('.fireworks');
-    let explosionCount = 0;
+// Function to generate falling items (coins or flowers)
+function createShower(containerId, imageUrl, count) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = ''; // Clear previous items
 
-    setInterval(() => {
-        explosionCount++;
-        const firework = document.createElement('div');
-        firework.classList.add('fireworks');
-        firework.style.left = Math.random() * window.innerWidth + 'px';
-        firework.style.top = Math.random() * window.innerHeight + 'px';
-        firework.style.animationDelay = (Math.random() * 2) + 's';
+    for (let i = 0; i < count; i++) {
+        const item = document.createElement('img');
+        item.src = imageUrl;
+        item.classList.add(containerId === 'coin-shower' ? 'coin' : 'flower');
+        item.style.left = Math.random() * window.innerWidth + 'px';
+        item.style.animationDuration = (Math.random() * 2 + 2) + 's'; // Random duration between 2s and 4s
+        container.appendChild(item);
+    }
+}
 
-        document.body.appendChild(firework);
-
-        // Remove fireworks after a short delay to avoid too many elements on screen
-        setTimeout(() => {
-            firework.remove();
-        }, 2000);
-    }, 1000);
+// Event listener for the "Honor with Gold" button
+document.getElementById('honor-gold').addEventListener('click', () => {
+    createShower('coin-shower', 'gold.png', 50); // Replace with your actual coin image
 });
+
+// Event listener for the "Honor with Flowers" button
+document.getElementById('honor-flowers').addEventListener('click', () => {
+    createShower('flower-shower', 'flower1.png', 50); // Replace with your actual flower image
+});
+
+
