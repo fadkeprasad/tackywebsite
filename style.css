@@ -1,0 +1,162 @@
+body {
+  background-color: #ff69b4;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 900px;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 20px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
+  color: yellow;
+  animation: neon-glow 1s infinite alternate;
+}
+
+.rainbow-text {
+  background: linear-gradient(90deg, #ff0040, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
+
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 10px yellow;
+  }
+
+  100% {
+    text-shadow: 0 0 20px orange;
+  }
+}
+
+.achievement {
+  margin: 20px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+.rotating {
+  animation: rotate 5s linear infinite;
+}
+
+.pulsing {
+  animation: pulse 2s infinite;
+}
+
+.bouncing {
+  animation: bounce 2s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-20px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.fireworks {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ff6600 20%, transparent 60%);
+  box-shadow: 0 0 30px 20px rgba(255, 102, 0, 0.8);
+  animation: explode 1s infinite;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
